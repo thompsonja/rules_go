@@ -171,3 +171,6 @@ def go_grpc_library(**kwargs):
 
 def proto_register_toolchains():
     print("You no longer need to call proto_register_toolchains(), it does nothing")
+
+def go_proto_v2_library(**kwargs):
+    go_proto_library(compilers = ["@io_bazel_rules_go//proto:go_proto_v2"], **kwargs)

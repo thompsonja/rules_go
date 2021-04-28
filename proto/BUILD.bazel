@@ -24,6 +24,13 @@ go_proto_compiler(
 )
 
 go_proto_compiler(
+    name = "go_proto_v2",
+    plugin = "@org_golang_google_protobuf//cmd/protoc-gen-go",
+    visibility = ["//visibility:public"],
+    deps = PROTO_RUNTIME_DEPS + WELL_KNOWN_TYPE_RULES.values() + WELL_KNOWN_TYPES_APIV2,
+)
+
+go_proto_compiler(
     name = "go_grpc",
     options = ["plugins=grpc"],
     visibility = ["//visibility:public"],
